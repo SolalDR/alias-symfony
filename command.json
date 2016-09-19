@@ -1,0 +1,24 @@
+{
+    "clear" : {
+      "default" : "cache:clear",
+      "prod" : "cache:clear --env=prod"
+    },
+    "db" : {
+      "default" : "doctrine:mapping:info",
+      "create" : "doctrine:database:create",
+      "drop" : "doctrine:database:drop",
+      "update" : "doctrine:schema:update",
+      "update-f" : "doctrine:schema:update --force"
+    },
+    "new" : {
+      "Bundle" : "generate:bundle",
+      "Entity" : "doctrine:generate:entity",
+      "Entities" : "doctrine:generate:entities",
+      "Form" : "doctrine:generate:form",
+      "Controller" : "generate:controller"
+    },
+    "update" : {
+      "default" : "doctrine:schema:update",
+      "force" : "doctrine:schema:update --force"
+    }
+}
