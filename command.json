@@ -8,17 +8,29 @@
       "create" : "doctrine:database:create",
       "drop" : "doctrine:database:drop",
       "update" : "doctrine:schema:update",
-      "update-f" : "doctrine:schema:update --force"
+      "update-f" : "doctrine:schema:update --force",
+      "validate" : "doctrine:schema:validate"
     },
     "new" : {
       "Bundle" : "generate:bundle",
       "Entity" : "doctrine:generate:entity",
       "Entities" : "doctrine:generate:entities",
       "Form" : "doctrine:generate:form",
-      "Controller" : "generate:controller"
+      "Controller" : "generate:controller",
+      "User" : "fos:user:create",
+      "Admin" : "fos:user:create admin admin --super-admin"
     },
     "update" : {
       "default" : "doctrine:schema:update",
       "force" : "doctrine:schema:update --force"
+    },
+    "promote" : {
+      "default" : "fos:user:promote"
+    },
+    "demote" : {
+      "default" : "fos:user:demote"
+    },
+    "load" : {
+      "fixtures" : "doctrine:fixtures:load"
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 //On récupère les commande stocké en json
-$commandStructure = (array) json_decode(file_get_contents("/Users/Solal/Documents/Developpement/SymfonyAlias/command.json"), true);
+$commandStructure = (array) json_decode(file_get_contents("/root/dev/alias-symfony/command.json"), true);
 
 //On initialise la commande console à "php bin/console "
 $command = "php bin/console ";
@@ -51,3 +51,5 @@ for($i=0; $i<count($unknownCommand); $i++){
 
 //On execute la commande
 system($command);
+
+?>
