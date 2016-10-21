@@ -26,7 +26,6 @@ if(count($argv)>1){
     if(isset($transit[$argv[$i]])){
       //Si il est soumis à des précision
       //  && !$transit[$argv[$i]["notice"]]
-      system("'key : ".$transit[$argv[$i]]."';");
 
       if(is_array($transit[$argv[$i]])){
 
