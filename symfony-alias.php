@@ -1,10 +1,11 @@
 <?php
 
+require("config.php");
 //On récupère les commande stocké en json
-$commandStructure = (array) json_decode(file_get_contents("/root/dev/alias-symfony/command.json"), true);
+$commandStructure = (array) json_decode(file_get_contents($dirPath."/command.json"), true);
 
 //On initialise la commande console à "php bin/console "
-$command = "php bin/console ";
+$command = $prefixCommand." ";
 $unknownCommand = [];
 $transit = $commandStructure;
 
@@ -24,11 +25,16 @@ if(count($argv)>1){
     //Si un arguments existe dans les racourcis
     if(isset($transit[$argv[$i]])){
       //Si il est soumis à des précision
+      //  && !$transit[$argv[$i]["notice"]]
+      system("'key : ".$transit[$argv[$i]]."';");
+
       if(is_array($transit[$argv[$i]])){
+
         $transit = $transit[$argv[$i]];
       //Sinon on est au bout du tableau
       } else {
         $command .= $transit[$argv[$i]];
+
         //On a plus besoin de transit;
         $transit = null;
       }

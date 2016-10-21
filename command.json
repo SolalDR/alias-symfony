@@ -24,6 +24,11 @@
       "default" : "doctrine:schema:update",
       "force" : "doctrine:schema:update --force"
     },
+    "user" : {
+      "promote" : "fos:user:promote",
+      "demote" : "fos:user:demote",
+      "create" : "fos:user:create"
+    },
     "promote" : {
       "default" : "fos:user:promote"
     },
