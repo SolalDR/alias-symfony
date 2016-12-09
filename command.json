@@ -12,6 +12,7 @@
       "validate" : "doctrine:schema:validate"
     },
     "new" : {
+      "Database" : "doctrine:database:create",
       "Bundle" : "generate:bundle",
       "Entity" : "doctrine:generate:entity",
       "Entities" : "doctrine:generate:entities",
@@ -21,8 +22,9 @@
       "Admin" : "fos:user:create admin admin --super-admin"
     },
     "update" : {
-      "default" : "doctrine:schema:update",
-      "force" : "doctrine:schema:update --force"
+      "default" : "doctrine:schema:update --force",
+      "force" : "doctrine:schema:update --force",
+      "show" : "doctrine:schema:update --dump-sql"
     },
     "user" : {
       "promote" : "fos:user:promote",
@@ -37,5 +39,24 @@
     },
     "load" : {
       "fixtures" : "doctrine:fixtures:load"
+    },
+    "routes" : {
+      "default" : "debug:router"
+    },
+    "db:migrate":{
+      "default" : "doctrine:schema:update --force"
+    },
+    "db:create":{
+      "default" : "doctrine:database:create"
+    },
+    "generate": {
+      "scaffold" : "generate:bundle",
+      "model" : "doctrine:generate:entity",
+      "controller" : "generate:controller"
+    },
+    "g": {
+      "scaffold" : "generate:bundle",
+      "model" : "doctrine:generate:entity",
+      "controller" : "generate:controller"
     }
 }
