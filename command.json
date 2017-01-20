@@ -38,6 +38,7 @@
       "default" : "fos:user:demote"
     },
     "load" : {
+      "default" : "doctrine:fixtures:load",
       "fixtures" : "doctrine:fixtures:load"
     },
     "routes" : {
@@ -48,6 +49,9 @@
     },
     "db:create":{
       "default" : "doctrine:database:create"
+    },
+    "db:seed": {
+      "default" : "doctrine:fixtures:load"
     },
     "generate": {
       "scaffold" : "generate:bundle",
